@@ -1,0 +1,307 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7oj1sui5trqk"]
+
+[ext_resource type="Texture2D" uid="uid://dyqrod0tkbou5" path="res://icon.svg" id="1_0f027"]
+[ext_resource type="Script" uid="uid://bexxa1xjkvbch" path="res://main_scene.gd" id="1_2c62f"]
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource("1_2c62f")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1150.0
+offset_bottom = 650.0
+
+[node name="MainMenu" type="BoxContainer" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -304.0
+offset_right = 400.0
+offset_bottom = 304.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical = true
+
+[node name="CenterContainer" type="CenterContainer" parent="UI/MainMenu"]
+custom_minimum_size = Vector2(800, 300)
+layout_mode = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="UI/MainMenu/CenterContainer"]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 2
+vertical = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="UI/MainMenu/CenterContainer/BoxContainer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+bbcode_enabled = true
+text = "[b][i]Eso te pasa por no practicar antes del examen[b][i]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/MainMenu/CenterContainer/BoxContainer"]
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 12
+bbcode_enabled = true
+text = "[color=red]MALINGO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="UI/MainMenu/CenterContainer/BoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="TextureMalingo" type="TextureRect" parent="UI/MainMenu/CenterContainer/BoxContainer/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("1_0f027")
+stretch_mode = 2
+
+[node name="CenterContainer2" type="CenterContainer" parent="UI/MainMenu"]
+custom_minimum_size = Vector2(800, 300)
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="BoxContainer" type="BoxContainer" parent="UI/MainMenu/CenterContainer2"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+vertical = true
+
+[node name="ButtonStart" type="Button" parent="UI/MainMenu/CenterContainer2/BoxContainer"]
+custom_minimum_size = Vector2(250, 60)
+layout_mode = 2
+text = "Empezar prueba de Inglés"
+
+[node name="ButtonExit" type="Button" parent="UI/MainMenu/CenterContainer2/BoxContainer"]
+custom_minimum_size = Vector2(250, 60)
+layout_mode = 2
+text = "Salir"
+
+[node name="TextBannedWords" type="RichTextLabel" parent="UI/MainMenu/CenterContainer2/BoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+bbcode_enabled = true
+text = "[b]Palabras Prohibidas:[/b]
+Caminar, Correr, Saltar, Comer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextCredits" type="RichTextLabel" parent="UI/MainMenu/CenterContainer2/BoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+bbcode_enabled = true
+text = "created by: @aaronclaros, Autohotkey License GNU GPLv2, Godot Engine License: Expat"
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExerciseMenu" type="BoxContainer" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -304.0
+offset_right = 400.0
+offset_bottom = 304.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical = true
+
+[node name="VBoxContainer" type="BoxContainer" parent="UI/ExerciseMenu"]
+layout_mode = 2
+
+[node name="TextChallengesIndex" type="RichTextLabel" parent="UI/ExerciseMenu/VBoxContainer"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "Pruebas Superadas: 0/5"
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UI/ExerciseMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+texture = ExtResource("1_0f027")
+expand_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="UI/ExerciseMenu"]
+custom_minimum_size = Vector2(800, 500)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BoxContainer" type="BoxContainer" parent="UI/ExerciseMenu/CenterContainer"]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 2
+vertical = true
+
+[node name="HelpLabel" type="RichTextLabel" parent="UI/ExerciseMenu/CenterContainer/BoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+bbcode_enabled = true
+text = "[b]Selecciona la mejor traduccion para:[/b]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="UI/ExerciseMenu/CenterContainer/BoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="EnglishWordRTlabel" type="RichTextLabel" parent="UI/ExerciseMenu/CenterContainer/BoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+text = "Ejemplo 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="UI/ExerciseMenu/CenterContainer/BoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="ButtonOptionA" type="Button" parent="UI/ExerciseMenu/CenterContainer/BoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Opcion A"
+
+[node name="ButtonOptionB" type="Button" parent="UI/ExerciseMenu/CenterContainer/BoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Opcion B"
+
+[node name="ButtonOptionC" type="Button" parent="UI/ExerciseMenu/CenterContainer/BoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Opcion C"
+
+[node name="MalingoMessage" type="BoxContainer" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -304.0
+offset_right = 400.0
+offset_bottom = 304.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical = true
+
+[node name="CenterContainer" type="CenterContainer" parent="UI/MalingoMessage"]
+custom_minimum_size = Vector2(800, 500)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BoxContainer" type="BoxContainer" parent="UI/MalingoMessage/CenterContainer"]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 2
+vertical = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/MalingoMessage/CenterContainer/BoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Juicio de Malingo"
+horizontal_alignment = 1
+
+[node name="BoxContainer" type="BoxContainer" parent="UI/MalingoMessage/CenterContainer/BoxContainer"]
+layout_mode = 2
+
+[node name="TextureMalingo" type="TextureRect" parent="UI/MalingoMessage/CenterContainer/BoxContainer/BoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_0f027")
+
+[node name="VSeparator" type="VSeparator" parent="UI/MalingoMessage/CenterContainer/BoxContainer/BoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="Mallngo Message" type="RichTextLabel" parent="UI/MalingoMessage/CenterContainer/BoxContainer/BoxContainer"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+text = "Parace que te reusas a dar la respuesta correcta para mis preguntas, asi como no puedes darme "
+
+[node name="BoxContainer2" type="BoxContainer" parent="UI/MalingoMessage/CenterContainer/BoxContainer"]
+layout_mode = 2
+
+[node name="TextNewBannedWord1" type="RichTextLabel" parent="UI/MalingoMessage/CenterContainer/BoxContainer/BoxContainer2"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "mañana"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextNewBannedWord2" type="RichTextLabel" parent="UI/MalingoMessage/CenterContainer/BoxContainer/BoxContainer2"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "mañana"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextNewBannedWord3" type="RichTextLabel" parent="UI/MalingoMessage/CenterContainer/BoxContainer/BoxContainer2"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "mañana"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextNewBannedWord4" type="RichTextLabel" parent="UI/MalingoMessage/CenterContainer/BoxContainer/BoxContainer2"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "mañana"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextNewBannedWord5" type="RichTextLabel" parent="UI/MalingoMessage/CenterContainer/BoxContainer/BoxContainer2"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "mañana"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="UI/MalingoMessage/CenterContainer/BoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="GameOverBannedWords" type="RichTextLabel" parent="UI/MalingoMessage/CenterContainer/BoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+bbcode_enabled = true
+text = "Palabras Prohibidas:
+Caminar, Correr, Saltar, Discutir"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BoxContainer3" type="BoxContainer" parent="UI/MalingoMessage/CenterContainer/BoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+alignment = 1
+
+[node name="ButtonPlayAgain" type="Button" parent="UI/MalingoMessage/CenterContainer/BoxContainer/BoxContainer3"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Jugar de nuevo"
+
+[node name="VSeparator" type="VSeparator" parent="UI/MalingoMessage/CenterContainer/BoxContainer/BoxContainer3"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="ButtonExitGame" type="Button" parent="UI/MalingoMessage/CenterContainer/BoxContainer/BoxContainer3"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Salir"
+
+[connection signal="pressed" from="UI/ExerciseMenu/CenterContainer/BoxContainer/ButtonOptionA" to="." method="_on_button_option_a_pressed" binds= [0]]
+[connection signal="pressed" from="UI/ExerciseMenu/CenterContainer/BoxContainer/ButtonOptionB" to="." method="_on_button_option_b_pressed" binds= [1]]
+[connection signal="pressed" from="UI/ExerciseMenu/CenterContainer/BoxContainer/ButtonOptionC" to="." method="_on_button_option_c_pressed" binds= [2]]
