@@ -191,11 +191,12 @@ func SetupExerciseMenu(challengesData:Dictionary):
 	for engWord in challengesData:
 		currentEngWord = engWord
 		english_word_r_tlabel.text = engWord
-		var optionsArray = challengesData.get(engWord)
+		var optionsArray = challengesData.get(engWord) as Array
 		currentSpaOptions = optionsArray
-		button_option_a.text = optionsArray[0]
-		button_option_b.text = optionsArray[1]
-		button_option_c.text = optionsArray[2]
+		currentSpaOptions.shuffle()
+		button_option_a.text = currentSpaOptions[0]
+		button_option_b.text = currentSpaOptions[1]
+		button_option_c.text = currentSpaOptions[2]
 
 func SetupGameOverMessage():
 	exercise_menu.hide()
